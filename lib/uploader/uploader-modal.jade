@@ -1,0 +1,11 @@
+form(method='post', autovalidate)
+  .fileinput.fileinput-new.btn-block(data-provides='fileinput')
+    .form-group
+      .preview.fileinput-preview
+    .form-group
+      input.form-control(type='text', name='url', id='url', validate='url', placeholder=t('settings.paste-url-image'))
+    .form-group
+      span.btn.btn-default.btn-block.btn-file
+        span.fileinput-new= t('settings.pick_a_pic')
+        span.fileinput-exists= t('settings.pick_a_pic.change')
+        input(type='file', id='file_input', name='file_input')

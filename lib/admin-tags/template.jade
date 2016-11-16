@@ -1,0 +1,21 @@
+- var prepend = forum ? ('/' + forum.name) : ''
+
+#tags-wrapper.admin-wrapper
+  .tags-admin
+    .actions.well
+      .row
+        .col-xs-12.col-md-3
+          a.btn.btn-success.btn-block.btn-labeled.clearfix.new(href='#{config.subPath}#{prepend}/admin/tags/create')
+            span.btn-label.pull-left
+              span.fa.fa-plus
+            span=t('admin-tags.list.add-tag')
+        .col-xs-12.col-md-9
+          .input-group.input-group-md
+            span.input-group-addon
+              i.glyphicon.glyphicon-search
+            input.form-control.search(type='text', placeholder='#{t("admin-tags.list.search.placeholder")}', autofocus)
+    .list.list-group
+      - each tag in tags
+        a.list-group-item(href="#{config.subPath}/admin/tags/" + tag.id)
+          span.tag-icon.fa(class=tagImages[tag.image].url)
+          span.tag-title=tag.name

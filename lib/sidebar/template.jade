@@ -1,0 +1,6 @@
+nav#sidebar.offcanvas-sm(role="navigation")
+  - if (config.callToActionUrl)
+    a.btn.btn-info.btn-block.btn-call(href=config.callToActionUrl, title=t('sidebar.call-to-action'))
+      span= t('sidebar.call-to-action')
+  .filter-container(data-sidebar-filter)
+  .list-container(data-sidebar-list)

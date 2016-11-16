@@ -1,0 +1,33 @@
+#rule-wrapper
+  .rule-admin
+    .heading
+      h1
+        i.fa.fa-cog
+        =t(form.title)
+    form.form(action=(config.subPath+form.action), method="post", role="form", autocomplete="off", autovalidate='autovalidate', autosubmit='autosubmit')
+      ul.form-messages
+      .form-group
+        label=t('admin-rule.type')
+        select.form-control(name='type', validate='required')
+          - each type in config.rules
+            option(selected=(rule.type == type) value=type)=type
+      .form-group
+        label=t('admin-rule.name')
+        input.form-control(type='text', name='name', value=rule.name, validate='required')
+      .form-group
+        label=t('admin-rule.value')
+        textarea.form-control(type='text', name='value', rows='12', validate='required json' , placeholder=t('admin-rules-form.value.placeholder'))= rule.text
+      .form-group.commands
+        button.btn.btn-success.btn-labeled.save
+          span.btn-label
+            i.fa.fa-floppy-o
+          span= t('admin-rules-form.button.submit')
+        - if (rule.id)
+          a.btn.btn-danger.btn-labeled.btn-delete(href='#')
+            span.btn-label
+              i.fa.fa-trash
+            span= t('admin-rules-form.button.delete')
+          a.btn.btn-default.btn-sm(href='#{config.subPath}/admin/rules/create')
+            span.fa.fa-plus
+            &nbsp;
+            span=t('admin-rules.list.add-rule')

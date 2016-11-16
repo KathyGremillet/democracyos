@@ -1,0 +1,32 @@
+[
+  {
+    "name" : "fist",
+    "value" : {
+        "label" : {
+            "default" : "barehands",
+            "fr" : "Je combat à mains nues",
+            "en" : "I fight barehands"
+        },
+        "icon" : {
+            "class" : "fa fa-hand-rock-o",
+            "color" : "inherit"
+        }
+    },
+    "type" : "activity"
+  },
+  {
+    "name" : "weapon",
+    "value" : {
+        "label" : {
+            "default" : "weapons",
+            "fr" : "Je combat avec des armes",
+            "en" : "I fight with weapons"
+        },
+        "icon" : {
+            "class" : "fa fa-cutlery",
+            "color" : "inherit"
+        }
+    },
+    "type" : "activity"
+  }
+]

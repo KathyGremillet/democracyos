@@ -1,0 +1,26 @@
+- var tabindex = 1
+
+#tag-wrapper.admin-wrapper
+  .tag-admin
+    .heading
+      h1
+        i.fa.fa-tag
+        =t(form.title)
+    form.form(action=(config.subPath+form.action), method="post", role="form", autocomplete="off", autovalidate='autovalidate', autosubmit='autosubmit')
+      ul.form-messages
+      .form-group
+        label= t('admin-tags-form.label.name')
+        input.form-control(type='text', id="name", name='name', tabindex=tabindex++, placeholder=t('admin-tags-form.placeholder.name'), value=tag.name, validate='required')
+      .form-group
+        label= t('admin-tags-form.label.image')
+        div.btn-group.tag-images(data-toggle="buttons")
+          - each image in images
+            label.btn.btn-primary.tag-image(class={ active: image.name === tag.image })
+              input(type="radio", name="image", autocomplete="off", tabindex=tabindex++, value=image.name, checked= tag.image === image.name, validate='any:image')
+              .tag-image-fill
+                i.fa(class=image.url)
+      .form-group
+        button.btn.btn-success.btn-labeled.btn-lg.save(role='submit', tabindex=tabindex++, value=t('admin-topics-form.button.submit'))
+          span.btn-label
+            i.fa.fa-floppy-o
+          span= t('admin-tags-form.button.submit')

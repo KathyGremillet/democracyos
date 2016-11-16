@@ -1,0 +1,42 @@
+.signin-container.inner-container
+  #signin-form
+    .title-page
+      .circle
+        i.fa.fa-sign-in
+      //- + " " + t('common.app-name')}
+      h1 #{t('signin.login-to')} 
+    
+    - if (config.domainWhiteList.length)
+      - var domains = config.domainWhiteList
+        .help
+          p!=t('signin.google.domain')
+          ul.list-unstyled
+            each d in domains
+              li= '@' + d
+    
+    form.form.small-container(action="#{config.subPath}/signin", method="post", role="form", autovalidate='autovalidate', autosubmit='autosubmit')
+      ul.form-errors
+      .form-group
+        label= t('signup.email')
+        input.form-control(type='text', name='email', tabindex=1, placeholder=t('forgot.mail.example'), validate='required email')
+      .form-group
+        .forgot: a(href='#{config.subPath}/forgot', tabindex=4) #{t('forgot.question')}
+        label= t('password')
+
+        input.form-control(type='password', name='password', tabindex=2, placeholder=t('password'), validate='required')
+      .form-group: .signup
+        span=t('signin.dont-have-account')
+        a(href='#{config.subPath}/signup', tabindex=5) #{t('signin.action.signup')}
+      .form-group: button.btn.btn-block.btn-info(tabindex=3)=t('signin.login')
+  - if (config.facebookSignin)
+    #auth-facebook-form
+      form(action="#{config.subPath}/auth/facebook", method="get", role="form")
+        button.btn.btn-block.btn-labeled.btn-default.btn-facebook(type="submit")
+          span.btn-label.pull-left: i.fa.fa-facebook
+          span= t('signin.login-with-facebook')
+  - if (config.googleSignin)
+    #auth-google-form
+      form(action="#{config.subPath}/auth/google", method="get", role="form")
+        button.btn.btn-block.btn-labeled.btn-default.btn-google(type="submit")
+          span.btn-label.pull-left: i.fa.fa-google
+          span= t('signin.login-with-google')

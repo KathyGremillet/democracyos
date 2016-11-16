@@ -1,0 +1,18 @@
+.comments-filter.hide
+  label= t('comments.ordered-by')
+  .btn-group(role='group',aria-label=t('comments.ordered-by'))
+    button.btn.btn-default.upvote(role='button',data-sort='upvote',aria-label=t('comments.sorts.upvote'))
+      i.fa.fa-thumbs-up
+    button.btn.btn-default.downvote(role='button',data-sort='downvote',aria-label=t('comments.sorts.downvote'))
+      i.fa.fa-thumbs-down
+    button.btn.btn-default.newest-first(role='button',data-sort='newest-first',aria-label=t('comments.sorts.newest-first'))
+      i.fa.fa-clock-o
+      i.fa.fa-long-arrow-up
+    button.btn.btn-default.oldest-first(role='button',data-sort='oldest-first',aria-label=t('comments.sorts.oldest-first'))
+      i.fa.fa-clock-o
+      i.fa.fa-long-arrow-down
+    button.btn.btn-default.score(role='button',data-sort='score',aria-label=t('comments.sorts.score'))
+      i.fa.fa-hashtag
+    button.btn.btn-default.random(role='button',data-sort='random',aria-label=t('comments.sorts.random'))
+      i.fa.fa-random
+    

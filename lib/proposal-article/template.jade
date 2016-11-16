@@ -1,0 +1,83 @@
+
+- if (proposal.forum)
+  .forum-intro
+    h2= proposal.forum.title
+    - if (proposal.forum.summary)
+      .description!= proposal.forum.summary
+
+- var closed = proposal.closed
+- var logged = user.logged()
+.inner-container
+  - var learnMore = config.learnMoreUrl
+  - if (learnMore)
+    div.alert.alert-warning.alert-dismissable.system-alert
+      button(type="button", class="close", data-dismiss="alert", aria-hidden="true")
+      span #{t('proposal-article.article.alert.text')}&nbsp;&nbsp;
+      a.alert-link(href=learnMore, target="_blank") #{t('proposal-article.article.alert.learn-more')}
+
+  - if ( logged && !user.updatedAt )
+    div.alert.alert-info.alert-dismissable.system-alert
+      button(type="button", class="close", data-dismiss="alert", aria-hidden="true")
+      i.fa.fa-lg.fa-info-circle
+      &emsp;
+      span!= t('settings.profile.alert.message',{subPath: config.subPath})
+
+  article.proposal.commentable-container
+    //- .meta-information
+    //-   a.meta-item.meta-location(href="#") Buenos Aires, Argentina
+    //-   small.meta-item.meta-timeago 10 days left
+
+    .entry-tag(style="border-color: #{proposal.tag.color}")
+      .entry-icon
+        i.fa(class=tagImages[proposal.tag.image].url)
+      span(style="color: #{proposal.tag.color}")= proposal.tag.name
+
+    .meta-information
+      - if (proposal.closingAt)
+        p
+          i.fa.fa-calendar
+          span.time-ago-label= (closed ? t('common.closed') : t('common.close')) + " "
+          span.meta-item.meta-timeago.ago(data-time=proposal.closingAt.toString())
+
+    h1=proposal.mediaTitle
+    - if (proposal.author)
+      h2.author=t('admin-topics-form.label.author') + ': '
+        - if (proposal.authorUrl)
+          a(href=proposal.authorUrl, target='_blank')=proposal.author
+        - else
+          =proposal.author
+    h3=proposal.title
+    .entry-content
+      .clauses
+        - var clauses = proposal.clauses
+        each clause, i in clauses
+          - var classes = ['clause']
+          - classes.push(clause.empty ? 'hide' : 'commentable-section')
+          !=toHTML(clause, { className: classes, iframeResponsive: true })
+
+    //- Article source
+    - if (proposal.source)
+      .source
+        p
+          span.glyphicon.glyphicon-link
+          a(target="_blank", href="#{proposal.source}")
+           | #{t('proposal-article.view-original-text')}
+
+    //- Article links
+    - if (proposal.links && proposal.links.length)
+      .links
+        h5=t('common.more-information')
+        - each link in proposal.links
+          p
+            span.glyphicon.glyphicon-share
+            a(target="_blank", href=link.url)=link.text
+
+    //- Article participants
+    .participants(class=proposal.votable ? '' : 'hide')
+      //- Rendered by participants view
+
+    //- Article share links
+    - var text = config.tweetText || proposal.mediaTitle
+    .share-links
+      a(target="_blank", href="http://www.facebook.com/sharer.php?u=#{baseUrl}/topic/#{proposal.id}").flaticon.social.facebook
+      a(target="_blank", href="http://twitter.com/share?text=#{text}&url=#{baseUrl}/topic/#{proposal.id}").flaticon.social.twitter

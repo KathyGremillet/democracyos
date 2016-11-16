@@ -1,0 +1,29 @@
+form
+  .form-group,
+  .input-group
+    position: relative
+
+    textarea.error,
+    select.error,
+    .input-field.error,
+    input[type=text].error,
+    input[type=password].error,
+    input[type=email].error
+      border: 1px solid #f4999d
+      box-shadow: inset 0 1px 1px rgba(0,0,0,.075),0 0 8px #fbd6d8
+
+    span.error
+      position: absolute
+      top: 35px
+      right: 10px
+      color: #cf4850
+      font-size: 12px
+      text-align: right
+      height: 14px
+      line-height: 14px
+      z-index: 2
+      user-select: none
+
+.form-messages
+  .msg
+    font-size 14px

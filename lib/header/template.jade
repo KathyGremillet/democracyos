@@ -1,0 +1,29 @@
+#header-container
+  a(id='toggleButton', data-toggle="offcanvas", data-target="#sidebar" )
+    i.fa.fa-bars
+    
+  a.home(href=config.homeLink || '#{config.subPath}/')
+    i.fa.fa-home.header-font-color
+  h1#logo
+    a(href=config.organizationUrl)
+      - var mobileLogo = !!config.logoMobile
+      - var classes = mobileLogo ? 'hidden-xs' : ''
+      - if (config.logo)
+        img(src=config.logo, class=classes).logo-image
+      - else
+        span.header-font-color(class=classes)= config.organizationName
+      - if (mobileLogo)
+        img(src=(config.subPath + config.logoMobile), title=config.organizationName).logo-image.visible-xs-inline-block
+        
+  .user-nav.btn-group
+    .user
+    - var color = config.headerFontColor;
+    - var style = color ? 'color: ' + color : '';
+    - var signin = config.signinUrl || config.subPath.concat('/signin')
+    - var signup = config.signupUrl || config.subPath.concat('/signup')
+    a(href=signin, style=style).login.pull-right.anonymous-user
+      i.fa.fa-sign-in
+      span= t('header.signin')
+    a(href=signup, style=style).login.pull-right.anonymous-user
+      i.fa.fa-user
+      span= t('header.signup')

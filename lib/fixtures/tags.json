@@ -1,0 +1,26 @@
+[
+  {
+      "hash" : "demo",
+      "name" : "demo",
+      "image" : "environment",
+      "color" : "#9E9E9E"
+  },
+  {
+      "hash" : "test",
+      "name" : "test",
+      "image" : "health",
+      "color" : "#FFA000"
+  },
+  {
+      "hash" : "legal",
+      "name" : "legal",
+      "image" : "legal",
+      "color" : "#FF5722"
+  },
+  {
+      "hash" : "social",
+      "name" : "social",
+      "image" : "social",
+      "color" : "#448AFF"
+  }
+]

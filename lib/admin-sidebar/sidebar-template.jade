@@ -1,0 +1,11 @@
+ul.admin-menu.nav.nav-pills.nav-stacked
+  - if (config.multiForum && user.staff)
+    li: a(href="#{config.subPath}/admin/forums" data-section='forums')=t('admin-sidebar.forums.title')
+  li: a(href="#{config.subPath}/admin/topics" data-section='topics')=t('admin-sidebar.topics.title')
+  - if (user.staff)
+    li: a(href="#{config.subPath}/admin/tags" data-section='tags')=t('admin-sidebar.tags.title')
+    li: a(href="#{config.subPath}/admin/users" data-section='users')=t('admin-sidebar.users.title')
+    - if (config.rules.length)
+      li: a(href="#{config.subPath}/admin/rules" data-section='rules')=t('admin-sidebar.rules.title')
+    - if (config.usersWhitelist)
+      li: a(href="#{config.subPath}/admin/whitelists" data-section='whitelists')=t('admin-sidebar.whitelists.title')

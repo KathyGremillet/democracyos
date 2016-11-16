@@ -1,0 +1,29 @@
+[
+  {
+      "name" : "loc1",
+      "value" : {
+          "label" : {
+              "default" : "Koryou High School"
+          }
+      },
+      "type" : "location"
+  },
+  {
+      "name" : "loc2",
+      "value" : {
+          "label" : {
+              "default" : "Ryōzanpaku"
+          }
+      },
+      "type" : "location"
+  },
+  {
+      "name" : "loc3",
+      "value" : {
+          "label" : {
+              "default" : "Yami"
+          }
+      },
+      "type" : "location"
+  }
+]

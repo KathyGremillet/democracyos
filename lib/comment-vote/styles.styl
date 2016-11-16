@@ -1,0 +1,56 @@
+.comment-vote
+
+  position absolute
+  left -60px
+  @media screen and (max-width: 1170px)
+    position static
+    margin-right 5px
+
+
+  font-size 14px
+  text-align right
+  vertical-align top
+  display inline-block
+  min-width 46px
+  height 46px
+
+
+
+  &.selected, &:hover
+    color #2D2D2D
+
+  a.vote
+    text-decoration initial
+
+  a.vote, .counter
+    color #9B9B9B
+    margin-right 7px
+
+    display inline-block
+    vertical-align middle
+    font-weight bold
+    height 23px
+
+  a.vote
+    cursor pointer
+    .fa.selected, &:hover
+      color #2D2D2D
+
+    i.fa
+      font-size 16px
+
+    &.up
+      .fa.selected, &:hover
+        color green
+
+    &.down
+      .fa
+        margin-top 2px
+      .fa.selected, &:hover
+        color red
+
+  .counter
+    &.selected.up
+      color green
+    &.selected.down
+      color red

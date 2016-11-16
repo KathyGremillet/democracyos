@@ -1,0 +1,58 @@
+- var tabindex = 1
+
+#profile-wrapper.hide
+  .profile-settings
+    .heading
+      h1
+        i.fa.fa-user
+        span= t('settings.profile')
+    form.form(action="#{config.subPath}/settings/profile", method="post", role="form", autocomplete="off", autovalidate='autovalidate', autosubmit='autosubmit')
+      ul.form-messages
+      .form-group.profile-picture
+        .image-container
+          img(src=user.profilePicture(), width="65",id="userProfilePicture")
+        .controls
+          input.form-control(id='profilePictureUrl', type='text', name='profilePictureUrl',tabindex=tabindex++, placeholder=t('settings.paste-url-image'), value=user.profilePictureUrl, validate='url')
+      - if (config.uploader)
+        .fileinput.fileinput-new.btn-block(data-provides='fileinput')
+          span.btn.btn-default.btn-block.btn-file
+            span.fileinput-new= t('settings.pick_a_pic')
+            span.fileinput-exists= t('settings.pick_a_pic.change')
+            input(type='file', id='file_input', name='file_input')
+      .form-group
+        label #{t('settings.first-name')}
+        input.form-control(type='text', id="firstName", name='firstName',tabindex=tabindex++, placeholder=t('settings.first-name'), value='#{user.firstName}', validate='required firstname')
+      .form-group
+        label #{t('settings.last-name')}
+        input.form-control(type='text', id="lastName", name='lastName',tabindex=tabindex++, placeholder=t('settings.last-name'), value='#{user.lastName}', validate='required lastname')
+      .form-group
+        label= t('signup.email')
+        input.form-control(type='text', disabled='disabled' name='email',tabindex=tabindex++, placeholder=t('forgot.mail.example'), value='#{user.email}', validate='required email')
+      .form-group
+        label #{t('settings.locale')}
+        select.form-control(id='locale', name='locale',tabindex=tabindex++)
+      - if (config.userAge)
+        .form-group
+          label #{t('settings.age')}
+          select.form-control(id='age', name='age',tabindex=tabindex++)
+            option(value=0)
+      - if(config.rules && (config.rules.indexOf('location') >= 0))
+        .form-group
+          label #{t('settings.location')}
+          select.form-control(id='location', name='location', tabindex=tabindex++)
+            option(value=0)
+            - each location in locations
+              - var current = ('' + user.location) === location.name ;
+              option(value=location.name,selected=current)= location.label
+      - if(config.rules && (config.rules.indexOf('activity') >= 0))
+        - each activity in activities
+          - var fieldName = 'activity' + activity.name.charAt(0).toUpperCase() + activity.name.slice(1);
+          .form-group
+            input(type='checkbox', id=fieldName, name=fieldName, tabindex=tabindex++)
+            label.inline= activity.label
+      .form-group.row.actions
+        .col-xs-12.col-md-6.col-md-offset-3
+          button.btn.btn-block.btn-labeled.btn-success(tabindex=tabindex++)
+            span.btn-label.pull-left
+              span.glyphicon.glyphicon-save
+            span=t('settings.save')

@@ -1,0 +1,23 @@
+- var voted = user.logged() && !!item.voted
+
+li(data-id=item.id, class=active ? 'active' : '')
+  a.main-link(href=item.url, class=voted ? 'voted' : '')
+    .item-tag
+      .item-icon
+        i.fa(class=tagImages[item.tag.image].url)
+
+    .item-badges
+      if voted
+        .voted
+          i.fa.fa-check
+
+    span.title= item.mediaTitle
+    span.created-by
+      //- if item.participants.length > 0
+      //-   - var cardinality = 1 === item.participants.length ? 'singular' : 'plural'
+      //-   = item.participants.length + ' ' + t('proposal-article.participant.' + cardinality)
+      if item.closingAt
+        - var closed = item.closingAt && +new Date(item.closingAt) < Date.now()
+        // br
+        span.time-ago-label= (closed ? t('common.closed') : t('common.close')) + ' '
+        span.meta-item.meta-timeago.ago(data-time=item.closingAt.toString())

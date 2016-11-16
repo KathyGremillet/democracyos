@@ -1,0 +1,198 @@
+/* Responsive
+-------------------------------------------------- */
+@media screen and (max-width: 1300px)
+  article.proposal
+    .entry-tag
+      position: static
+      width: auto
+      padding-bottom: 10px
+      margin-bottom: 20px
+      text-align: left
+      border-bottom 4px solid rgba(#000, .8)
+
+      .entry-icon
+        display inline
+        .fa
+          font-size 20px
+          vertical-align sub
+          margin-right 5px
+
+      svg.hexagon
+        left: 0
+        position: absolute
+        display: none
+      img
+        z-index: 100
+        left: 20px
+        display: none
+
+      span
+        font-size: 14px
+        margin-left: 0
+        padding-top: 10px
+        display: inline-block
+
+@media screen and (max-width: 991px)
+  .browser-page
+    header.app-header
+      #toggleButton
+        display block
+      a.home
+        left 46px
+  header.app-header
+    padding-left: 0
+    a.home
+      position absolute
+      height 64px
+    h1#logo
+      text-align: center
+      width: auto
+      display: block
+    img.logo
+      margin: auto
+      margin-top: -2px
+    .logo-link
+      display: none
+    .user-nav
+      margin-right 0
+      .caret
+        display: none
+      .btn
+        border: 0
+      .profile span.name
+        display: none
+      .login
+        margin-left: 10px
+        span
+          display: none
+        i
+          display: inline-block
+      .user-badge .btn
+        padding 16px 18px
+  aside.nav-proposal
+    padding-top 0
+    margin-top 0
+    min-height 100%
+    max-height 100%
+    padding-bottom 70px
+    position fixed
+    left 0
+    background-color white
+    z-index: 9990
+    overflow auto
+
+  #sidebar
+    min-height 100%
+    height auto !important
+
+  section.site-content
+    left: 0
+
+  .inner-container
+    max-width: 100%
+
+  .proposal-options .vote-options
+    .direct-vote
+      display: block
+
+    .vote-option
+      width: 100%
+      margin-right: 0
+      text-align: center
+
+  .uv-icon
+    display: none !important
+
+  .app-footer
+    min-height auto
+    height auto
+    .footer-content
+      margin-top 35px
+      padding-left 30px
+    .footer-links:nth-child(2)
+      .btn-block
+        text-align: left
+
+@media screen and (max-width: 448px)
+  .app-footer
+    min-height auto
+    height auto
+    font-size 70%
+    text-align center
+
+    .colophon
+      a.btn-link
+        font-size 100%
+
+    .footer-content
+      padding 0 20px
+    .footer-links
+      .btn-block
+        text-align: center !important
+
+  /* Snap.js
+  ----------------------------------------------- */
+  .snap-content
+    position: absolute
+    background: white
+    top: 0
+    right: 0
+    left: 0
+    bottom: 0
+    width: auto
+    min-height: 100%;
+    height: auto !important;
+    height: 100%;
+    margin: 0 auto 20px ;
+    z-index: 9990
+    -webkit-overflow-scrolling: touch
+    -webkit-transform: s('translate3d(0, 0, 0)')
+    -moz-transform: s('translate3d(0, 0, 0)')
+    -ms-transform: s('translate3d(0, 0, 0)')
+    -o-transform: s('translate3d(0, 0, 0)')
+    transform: s('translate3d(0, 0, 0)')
+
+    .push
+      height: 150px;
+      clear: both;
+
+  .snap-drawers
+    position: absolute
+    top: 0
+    right: 0
+    bottom: 0
+    left: 0
+    width: auto
+    height: auto
+
+  .snap-drawer
+    position: absolute
+    top: 0
+    right: auto
+    bottom: 0
+    left: auto
+    width: 265px
+    height: auto
+    overflow: auto
+    -webkit-overflow-scrolling: touch
+    -webkit-transition: width 0.3s ease
+    -moz-transition: width 0.3s ease
+    -ms-transition: width 0.3s ease
+    -o-transition: width 0.3s ease
+    transition: width 0.3s ease
+
+  .snap-drawer-left
+    left: 0
+    z-index: 1
+
+  .snap-drawer-right
+    right: 0
+    z-index: 1
+
+  .snapjs-left .snap-drawer-right,
+  .snapjs-right .snap-drawer-left
+    display: none
+
+  .snapjs-expand-left .snap-drawer-left,
+  .snapjs-expand-right .snap-drawer-right
+    width: 100%

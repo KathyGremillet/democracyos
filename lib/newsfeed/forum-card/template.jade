@@ -1,0 +1,37 @@
+
+style.
+  .forum-card-#{forum.id} .panel-heading {
+    background: url("#{forum.image}") center center no-repeat transparent;
+    background-size : cover ;
+    color: white;
+    text-transform: uppercase ;
+    padding-bottom: 25px;
+  }
+  .forum-card-#{forum.id} .panel-heading h3 {
+    margin-top: 35px;
+  }
+
+.newsfeed-grid-item.col-sm-12.col-md-6
+  .forum-card.panel.panel-default(class='forum-card-'+forum.id)
+    .panel-heading
+      a.link(href=forum.url)
+        h2= forum.title
+      span.stats
+        = forum.data.count.topic
+        b débats
+      //- span.stats
+      //-   = forum.data.count.people
+      //-   i.fa.fa-user
+      //- span.stats
+      //-   = forum.data.count.message
+      //-   i.fa.fa-comment
+    - if ( forum.summary != '<p><br></p>' )
+      .panel-body
+        p!= forum.summary
+    .panel-footer.force-header-background-color
+      a.btn.btn-link.btn-block(href=forum.url).force-header-font-color
+        = t('forum.link')
+        &emsp;
+        i.fa.fa-chevron-right
+
+      

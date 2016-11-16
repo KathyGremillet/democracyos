@@ -1,0 +1,135 @@
+- var prepend = forum ? ('/' + forum.name) : ''
+
+#topic-wrapper.admin-wrapper
+  - if (tags.length == 0)
+    if (user.staff)
+      p.alert.alert-danger.text-center!=t('admin-topics-form.alert.no-tags')
+      p.text-center
+        a.btn.btn-lg.btn-primary.create-tag(href='#{config.subPath}/admin#{prepend}/tags/create')=t('admin-tags-form.title.create')
+    else
+      p.alert.alert-danger.text-center=t('admin-topics-form.alert.no-tags.no-staff')
+  - else
+    .topic-admin
+      .heading
+        h1
+          i.fa.fa-edit
+          =t(form.title)
+        
+        .commands
+          a.btn.btn-success.btn-labeled.save
+            span.btn-label
+              i.fa.fa-floppy-o
+            span= t('admin-topics-form.button.submit')
+          a.btn.btn-info.btn-labeled.make-private(class=topic.public && topic.id ? '' : 'hide')
+            span.btn-label
+              i.fa.fa-eye-slash
+            span= t('admin-topics-form.button.make-private')
+          a.btn.btn-primary.btn-labeled.make-public(class=topic.draft && topic.id ? '' : 'hide')
+            span.btn-label
+              i.fa.fa-eye
+            span= t('admin-topics-form.button.make-public')
+          - if (topic.id)
+            a.btn.btn-danger.btn-labeled.delete-topic
+              span.btn-label
+                i.fa.fa-trash
+              span= t('admin-topics-form.delete-topic.button.delete')
+            a.btn.btn-primary.btn-labeled.preview(class=topic.draft && topic.id ? '' : 'hide',href=topic.url)
+              span.btn-label
+                i.fa.fa-external-link
+              span= t('admin-topics-form.button.preview')
+            a.btn.btn-primary.btn-labeled.view(class=topic.public && topic.id ? '' : 'hide',href=topic.url)
+              span.btn-label
+                i.fa.fa-external-link
+              span= t('admin-topics-form.button.view')
+            
+      form(action=(config.subPath+form.action), method="post", role="form", autocomplete="off", novalidate, autovalidate='autovalidate', autosubmit='autosubmit')
+        input(type='hidden', name='_topic_id_', value=topic.id)
+        ul.form-messages
+        - if (config.multiForum)
+          .form-group
+            label= t('admin-topics-form.label.forum')
+            select.form-control(name='forum', tabindex=1, validate='required')
+              - each forum in forums
+                option(selected= topic.forum ? forum.id === topic.forum.id : false, value=forum.id)= forum.title
+        .form-group
+          label= t('admin-topics-form.label.mediaTitle')
+          input.form-control(type='text', id="mediaTitle", name='mediaTitle', tabindex=2, placeholder=t('admin-topics-form.label.mediaTitle'), value=topic.mediaTitle, validate='required')
+        .form-group
+          label= t('admin-topics-form.label.tag')
+          select.form-control(name='tag', tabindex=3, validate='required')
+            - each tag in tags
+              option(selected= topic.tag ? tag.hash === topic.tag.hash : false, value=tag.hash)= tag.name
+        .form-group
+          label= t('admin-topics-form.label.topicId')
+          input.form-control(type='text', id="topicId", name='topicId', tabindex=4, placeholder=t('admin-topics-form.label.topicId'), value=topic.topicId)
+        .form-group
+          label= t('admin-topics-form.label.author')
+          input.form-control(type='text', id="topicAuthor", name='topicAuthor', tabindex=5, placeholder='John Doe', value=topic.author, validate='author')
+        .form-group
+          label= t('admin-topics-form.label.author') + ' URL'
+          input.form-control(type='text', id="authorUrl", name='authorUrl', tabindex=6, placeholder='http://en.wikipedia.org/wiki/John_Doe', value=topic.authorUrl, validate='url')
+        .form-group
+          label= t('admin-topics-form.label.votable')
+          .votable-toggle
+        .form-group.hide
+          label= t('admin-topics-form.label.clause-truncation-text')
+          input.form-control(type='text', name='bodyTruncationText', placeholder=t('common.read-more'), value=topic.bodyTruncationText)
+        .form-group
+          label= t('admin-topics-form.label.source')
+          input.form-control(type='url', name='source', tabindex=7, placeholder=t('admin-topics-form.placeholder.source'), value=topic.source, validate='url')
+        .form-group
+          label= t('admin-topics-form.label.summary')
+          textarea.form-control(name='body', tabindex=8)= topic.body
+        .form-group.closingAt
+          label= t('admin-topics-form.label.closingAt')
+          - var closingAt = ''
+          - var closingAtTime = ''
+          - if (topic.closingAt)
+            - closingAt = new Date(topic.closingAt)
+            - var closingAtTime = moment(closingAt).format('H:mm')
+            - closingAt = closingAt.getFullYear() + '/' + (closingAt.getMonth() + 1) + '/' + closingAt.getDate()
+          .input-group
+            input.form-control(name='closingAt', tabindex=10, readonly=true, value=closingAt)
+            span.input-group-addon.clear-closingAt
+              i.glyphicon.glyphicon-remove
+          .input-group
+            input.form-control(name='closingAtTime', tabindex=11, value=closingAtTime, placeholder='hh:mm', validate='time')
+        .form-group.clearfix
+          label=t('admin-topics-form.label.resources')
+          .topic-links
+            - if (topic.links && topic.links.length)
+              - each link, id in topic.links
+                include link
+          .pull-left
+            a.add-link.btn.btn-block.btn-labeled.btn-info(href='#')
+              span.btn-label
+                i.fa.fa-link
+              span= t('admin-topics-form.button.add-link')
+            .form-group: input.btn.btn-success.btn-block.btn-lg.hide(type='submit', tabindex=12, value=t('admin-topics-form.button.submit'))
+          span.add-link-forbidden.hide=t('admin-topics-form.message.add-link-forbidden')
+    .commands
+      a.btn.btn-success.btn-labeled.save
+        span.btn-label
+          i.fa.fa-floppy-o
+        span= t('admin-topics-form.button.submit')
+      a.btn.btn-info.btn-labeled.make-private(class=topic.public && topic.id ? '' : 'hide')
+        span.btn-label
+          i.fa.fa-eye-slash
+        span= t('admin-topics-form.button.make-private')
+      a.btn.btn-info.btn-labeled.make-public(class=topic.draft && topic.id ? '' : 'hide')
+        span.btn-label
+          i.fa.fa-eye
+        span= t('admin-topics-form.button.make-public')
+      - if (topic.id)
+        a.btn.btn-danger.btn-labeled.delete-topic
+          span.btn-label
+            i.fa.fa-trash
+          span= t('admin-topics-form.delete-topic.button.delete')
+        a.btn.btn-primary.btn-labeled.preview(class=topic.draft && topic.id ? '' : 'hide',href=topic.url)
+          span.btn-label
+            i.fa.fa-external-link
+          span= t('admin-topics-form.button.preview')
+        a.btn.btn-primary.btn-labeled.view(class=topic.public && topic.id ? '' : 'hide',href=topic.url)
+          span.btn-label
+            i.fa.fa-external-link
+          span= t('admin-topics-form.button.view')

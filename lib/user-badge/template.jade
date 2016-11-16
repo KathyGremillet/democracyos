@@ -1,0 +1,25 @@
+.user-wrapper
+  .notifications-badge.pull-left.hidden-xs
+    a.btn.notifications(href='#{config.subPath}/notifications')
+      span.fa.fa-bell-o.bell-o
+  .user-badge.pull-right
+    a.btn.profile
+      img(src=user.profilePicture())
+      - var color = config.headerFontColor
+      span.name.ellipsis(style=color ? 'color: #{color}' : '')=user.firstName
+      span.caret
+    ul.dropdown-list
+      li.visible-xs
+        a(href='#{config.subPath}/notifications')=t('notifications.title')
+      - if (user.staff)
+        li: a(href='#{config.subPath}/admin')= t('header.admin')
+      li: a(href='#{config.subPath}/settings')= t('header.settings')
+      - if (config.frequentlyAskedQuestions)
+        li: a(href="#{config.subPath}/help/faq")= t('help.faq.title')
+      - if (config.termsOfService)
+        li: a(href="#{config.subPath}/help/terms-of-service")= t('help.tos.title')
+      - if (config.privacyPolicy)
+        li: a(href="#{config.subPath}/help/privacy-policy")= t('help.pp.title')
+      - if (config.glossary)
+        li: a(href="#{config.subPath}/help/glossary")= t('help.glossary.title')
+      li: a(href='#{config.subPath}/logout')= t('header.logout')

@@ -1,0 +1,457 @@
+@import '../../node_modules/democracyos-toggle/lib/index.css'
+@import '../../node_modules/democracyos-loading-lock/loading-lock.css'
+@import '../../node_modules/democracyos-confirmation/confirmation.css'
+@import '../../node_modules/democracyos-tip/tip.css'
+@import '../../node_modules/democracyos-datepicker/datepicker.css'
+@import '../../node_modules/democracyos-calendar/lib/calendar.css'
+@import '../../node_modules/democracyos-aurora-calendar/style.css'
+@import '../../node_modules/democracyos-aurora-popover/aurora-popover.css'
+@import '../../node_modules/democracyos-aurora-tip/aurora-tip.css'
+@import '../../node_modules/democracyos-quill/dist/quill.base.css'
+@import '../../node_modules/democracyos-quill/dist/quill.snow.css'
+
+/* Vars
+-------------------------------------------------- */
+
+@import './vars'
+
+/* General
+-------------------------------------------------- */
+
+html
+  -webkit-font-smoothing antialiased
+
+body
+  color rgba(#000, .8)
+  font-size 16px
+  line-height 1.4
+  font-family 'Roboto', 'Helvetica Neue', Helvetica, Arial, sans-serif
+  background-color #f9f9f9
+
+html, body
+  margin 0 !important
+
+h1,
+h2,
+h3,
+p
+  color inherit
+
+p
+  font-weight 400
+  font-size 1em
+  line-height 1.6
+
+.lead
+  font-size 1.2em
+
+h1,
+h2,
+h3
+  line-height 1.1
+  font-weight 700
+
+h1
+  font-size 2.6em
+  margin-top 1em
+  margin-bottom .5em
+
+h2
+  font-size 1.75em
+  margin-top 1.2em
+  margin-bottom .8em
+
+h3
+  font-size 1em
+  margin-top 1.375em
+  margin-bottom 1.375em
+
+a
+  color #3d699e
+  font-weight bold
+
+  &:hover,
+  &:focus,
+  &:active
+    color #3d699e
+    text-decoration none
+    outline none
+
+img.avatar
+  border-radius 100%
+
+
+.badge, .fa-badge
+  margin-left 7px
+  &.staff
+    color #EF5350
+
+.badge
+  position relative
+  top -1px
+
+.btn
+  font-weight bold
+  letter-spacing .1px
+  border 0
+  border-radius 2px
+  background-color transparent
+
+  transition all 0.3s ease
+
+  .fa + span
+    margin 0 0.5em
+
+  &:active, &:focus, &:active:focus
+    -webkit-box-shadow none
+    box-shadow none
+    outline none
+    text-decoration none
+
+.btn-default, .btn-dashed
+  border 0
+  color #777
+  border 1px solid #ddd
+  &:hover
+    color #484848
+    border-color #ccc
+    background-color inherit
+
+.btn-dashed
+  font-weight normal
+  border-style dashed
+  color #999
+
+.btn-primary
+  background-color #3d699e
+  &:hover
+    background-color darken(#3d699e, 40%)
+
+.btn-info
+  background-color #0C518A
+  &:hover
+    background-color darken(#0C518A, 40%)
+
+.btn-success
+  background-color #4CAF50
+  &:hover
+    background-color darken(#4CAF50, 40%)
+
+.btn-danger
+  background-color #ef5350
+  &:hover
+    background-color darken(#ef5350, 40%)
+
+.btn-link
+  color #3d699e
+  &:hover
+    text-decoration none
+
+.btn-group > .btn + .dropdown-toggle
+  padding-left 13px
+  padding-right 13px
+
+.btn-labeled
+  padding-right 20px
+  .btn-label
+    background transparent
+    padding 9px 12px
+    border-right 1px solid rgba(#fff, .1)
+
+    &.pull-left + span
+      display inline-block
+      padding 6px 12px
+
+label
+  display block
+  font-size .875em
+  &.inline
+    display inline
+
+.dropdown-menu
+  border-radius 0
+  text-transform none
+
+.f-toggle, a.f-toggle
+  span
+    color #999
+  .on
+    display none
+  .off
+    display inline-block
+  &.on
+    border-color #ddd
+    span
+      font-weight bold
+      color #555
+    .on
+      display inline-block
+    .off
+      display none
+
+.alert
+  font-weight bold
+  border 0
+  border-radius border_radius
+  &.alert-info
+    color white
+    background-color #3498db
+  &.alert-success
+    color white
+    background-color #8bc34a
+  &.alert-warning
+    color white
+    background-color #f1c40f
+  &.alert-block
+    background-color #999
+    color white
+
+.system-alert
+  margin-top 20px
+
+.caret
+  color #000
+  position absolute
+  right 12px
+  top 50%
+  margin-top -1px
+
+.inner-container
+  padding-left 20px
+  padding-right 20px
+  margin auto
+  max-width content_width
+
+.small-container
+  max-width 350px
+  padding-left 10px
+  padding-right 10px
+  margin 25px auto 15px
+
+.title-page
+  text-align center
+  margin-bottom 30px
+  margin-top 30px
+  .circle
+    width 80px
+    height 80px
+    overflow hidden
+    display inline-block
+    border-radius 100px
+
+  i
+    font-size 40px
+    line-height 80px
+    color #7f8c8d
+
+  h1
+    font-size 14px
+    letter-spacing 1px
+
+/* Site Content Container
+-------------------------------------------------- */
+
+.snap-content
+  // min-height: 100%;
+  // height: auto !important;
+  // height: 100%;
+  // margin: 0 auto 20px ;
+
+
+section#browser
+  display none
+body.browser-page
+  section#browser
+    display block
+  section#content
+    display none
+
+.main-container
+  min-height 100%
+  height auto !important
+  height 100%
+  margin 0 auto -200px
+  padding-top header_height
+
+  .push
+    height 200px
+    clear both
+
+section.site-content
+
+  &.loading-lock
+    position static !important
+
+  &#content
+    z-index 12
+
+  &#browser
+    .row
+      z-index 5
+    .col-sidebar
+      z-index 10
+      background-color #f9f9f9
+    .col-content
+      z-index 8
+      overflow-y hidden
+
+  .app-content
+    margin: 0 auto;
+
+.app-footer
+  padding 30px 0 40px
+  height 200px
+  z-index 20
+
+  .footer-content
+    padding-right 30px
+
+  .colophon
+    padding-top 5px
+    a
+      color: #aaa
+
+.footer-links
+  .btn-block
+    text-align: right
+  a.btn-link
+    color: #fff
+
+.main-container.site-embeded
+  min-height 450px
+  height auto
+  padding-top 0
+  margin 0 auto
+  .push
+    display none !important
+  .site-content, .app-content
+    min-height 450px
+
+.forum-intro
+  max-width 780px
+  margin 15px auto
+
+
+/* Signin page
+-------------------------------------------------- */
+.signin-container, .signup-container, .forgot-container
+  form
+    label
+      display:inline-block
+    .forgot
+      float:right
+      a
+        font-size 12px
+
+
+/* Sidebar
+-------------------------------------------------- */
+aside.nav-proposal
+  // width nav_proposal_width
+  overflow-y scroll
+  padding-top 25px
+  z-index 10
+  min-height 450px
+
+/* Sidebar dropdown-department
+-------------------------------------------------- */
+.proposal-type
+  position absolute
+  left 14px
+  top 20px
+  background #F1C42E
+  color white
+  border-radius 100px
+  padding 10px
+  line-height 10px
+  &.proposal-type-2
+    background-color #E67E22
+
+/* `component/confirmation` adjust styles
+-------------------------------------------------- */
+body
+  .overlay
+    background radial-gradient(ellipse at center, rgba(0,0,0,0.25) 0%, rgba(0,0,0,0.55) 100%)
+    z-index 9999998
+
+  .dialog
+    position fixed
+    display block
+    left 50%
+    top 150px
+    right initial
+    bottom initial
+    max-width 100%
+    width 400px
+    margin-left -200px
+    background #FFF
+    box-shadow 2px 2px 5px rgba(0,0,0,.4)
+    border 0px
+    overflow initial
+    z-index 9999999
+
+    @media (max-width: 399px)
+      left 1%
+      width 98%
+      margin-left 0
+
+    .content
+      padding 0px 20px 10px 20px
+      width 100% // overrides .dialog width from dialog component
+      max-width none
+      min-width 0
+      border 0
+
+      .title
+        position absolute
+        left 0px
+        right 0px
+        top 0px
+        min-height 20px
+        padding 5px 20px
+        background #EF5350
+        color #FFF
+        font-weight bold
+      .body
+        padding 20px 0px
+        margin-top 30px
+      .close
+        line-height 10px
+        top 10px
+        right 10px
+        font-weight bold
+        color #fff
+        opacity 1
+    .confirmation-actions
+      padding 5px 10px
+      button
+        border none
+        border-radius 2px
+        color #FFF
+        background #aaa
+        padding 6px 12px
+        font-size 14px
+        font-weight bold
+        outline none
+        &.cancel
+          outline none
+          color #999
+          background-color transparent
+          &:focus, &:hover
+            color #484848
+            background-color transparent
+        &.main, &.ok
+          background #EF5350
+          &:focus, &:hover
+            background #952722
+
+span.error
+  pointer-events none
+
+.ellipsis
+  overflow hidden
+  text-overflow ellipsis
+  white-space nowrap
+
+@import '../*/styles'
+@import './boot-responsive'

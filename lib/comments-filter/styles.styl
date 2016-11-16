@@ -1,0 +1,32 @@
+.comments-filter
+
+  &.active
+    .dropdown-list
+      display block
+
+  &.hide
+    display none
+
+
+  .btn-group
+    .fa
+      color #999
+    .btn
+      height 32px
+      padding 5px 12px
+
+      &.active
+        .fa
+          color #3d699e
+        &.upvote .fa
+          color green
+        &.downvote .fa
+          color red
+
+    .btn-default.active, .btn-default:active,
+    .btn-default.active.focus, .btn-default.active:focus,
+    .btn-default.active:hover, .btn-default:active.focus,
+    .btn-default:active:focus, .btn-default:active:hover
+      border-color #3d699e
+      background-color transparent
+      box-shadow none

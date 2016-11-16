@@ -1,0 +1,119 @@
+- var currentUser = user
+
+mixin badge(key)
+  - var o = filter(roles,{name:key})
+  - if (o.length)
+    span.badge.role(style='background-color:#{o[0].value.color.background};')=o[0].label
+    span.role.hide(class=key)=o[0].label
+    
+mixin toggle(role,user)
+  - var toggleClass = (user.roles.indexOf(role.name) >= 0)?'on':'off'
+  a.list-group-item.f-toggle(class=toggleClass, data-toggle=role.name, data-id=user.id)
+    .pull-right
+      i.refresh.fa.fa-refresh.fa-spin.hide
+      i.ok.fa.fa-check.hide
+      i.ko.fa.fa-exclamation.hide
+    .on
+      i.fa.fa-circle(style='color:#{role.value.color.background};')
+    .off
+      i.fa.fa-circle
+    span=role.label
+    
+mixin activity(key)
+  - var o = filter(activities,{name:key})
+  - if (o.length)
+    p.info
+      i(class=o[0].value.icon.class, style='color:#{o[0].value.icon.color};')
+      span(class='activity-'+o[0].name)=o[0].label
+    
+#users-wrapper.admin-wrapper
+  .users-admin
+    .actions.well
+      .row
+        .col-xs-12.col-md-8
+          .input-group.input-group-md
+            span.input-group-addon
+              i.glyphicon.glyphicon-search
+            input.form-control.search(type='text', placeholder='#{t("admin-users.list.search.placeholder")}', autofocus)
+        .col-xs-12.col-md-4
+          button.btn.btn-primary.btn-block.dropdown-toggle(type='button',data-toggle='dropdown')
+            =t('admin-users.list.sort')
+          ul.dropdown-menu.dropdown-menu-right
+            li
+              a.sort(data-sort='createdAt')
+                i.fa.fa-calendar-check-o
+                =t('admin-users.list.sort.date')
+            li
+              a.sort(data-sort='lastName')
+                i.fa.fa-sort-alpha-asc
+                =t('settings.last-name')
+            li
+              a.filter(data-filter=t('admin-users.list.staff'))
+                i.fa.fa-wrench.staff
+                span=t('admin-users.list.staff')
+            - each role in roles
+              li
+                a.filter.role(data-filter=role.label)
+                  i.fa.fa-circle(class=role.name,style='color:#{role.value.color.background};')
+                  span=role.label
+    .list.list-group
+      - each user in users
+        .list-group-item.user-item(data-id=user.id)
+          .media.row
+            .cols-xs-12.col-md-8
+              .media-left
+                img.media-object(src=user.avatar)
+              .media-body
+                  h4
+                    span.fullName=user.fullName
+                    span.lastName.hide=user.lastName
+                    span.id.hide=user.id
+                    - if (user.staff)
+                      i.fa.fa-wrench.fa-badge.staff-alt
+                      span.staff.hide=t('admin-users.list.staff')
+                    - if(user.roles)
+                      each role in user.roles
+                        +badge(role)
+                  p.info
+                    i.fa.fa-envelope-o
+                    span.email=user.email 
+                  p.info
+                    i.fa.fa-calendar-check-o
+                    span.createdAt.hide=user.createdAt
+                    span=t('admin-users.list.sort.date')
+                    | &nbsp;
+                    i.ago(data-time=user.createdAt.toString())
+                  - if (config.userAge && user.age)
+                    p.info
+                      i.fa.fa-birthday-cake
+                      span= t('settings.age.' + user.age) 
+                  - if(config.rules && (config.rules.indexOf('location') >= 0) && user.location)
+                    - var o = filter(locations,{name:''+user.location})
+                    - if (o.length)
+                      p.info
+                        i.fa.fa-map-marker
+                        span=o[0].label
+                  - if(config.rules && (config.rules.indexOf('activity') >= 0))
+                    - if (user.activities.live)
+                      +activity('live')
+                    - if (user.activities.work)
+                      +activity('work') 
+                    - if (user.activities.study)
+                      +activity('study') 
+            - if (currentUser.staff)
+              .cols-xs-12.col-md-4
+                .list-group.actions
+                  - var toggleStatusClass = user.status=='active'?'on':'off'
+                  a.list-group-item.f-toggle(class=toggleStatusClass, id='f-role-status', data-toggle='status', data-id=user.id)
+                    .pull-right
+                      i.refresh.fa.fa-refresh.fa-spin.hide
+                      i.ok.fa.fa-check.hide
+                      i.ko.fa.fa-exclamation.hide
+                    .on
+                      i.fa.fa-circle.active
+                      span.status-alt=t('admin-users-form.enabled')
+                    .off
+                      i.fa.fa-circle
+                      span=t('admin-users-form.disabled')
+                  - each role in roles
+                    +toggle(role,user)

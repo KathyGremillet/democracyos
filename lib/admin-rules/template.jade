@@ -1,0 +1,31 @@
+#rules-wrapper
+  .rules-admin
+    .actions.well
+      .row
+        .col-xs-12.col-md-3
+          a.btn.btn-success.btn-block.btn-labeled.clearfix.new(href='#{config.subPath}/admin/rules/create')
+            span.btn-label.pull-left
+              span.fa.fa-plus
+            span=t('admin-rules.list.add-rule')
+        .col-xs-12.col-md-9
+          .input-group.input-group-md
+            span.input-group-addon
+              i.glyphicon.glyphicon-search
+            input.form-control.search(type='text', placeholder='#{t("admin-rules.list.search.placeholder")}', autofocus)
+    .list.list-group
+      - each rule in rules
+        a.list-group-item(href="#{config.subPath}/admin/rules/" + rule.id)
+          case rule.type
+            when 'role' 
+              span.rules-icon.fa.fa-fw.fa-group
+            when 'location' 
+              span.rules-icon.fa.fa-fw.fa-map-marker
+            when 'activity' 
+              span.rules-icon.fa.fa-fw.fa-th-list
+            default 
+              span.rules-icon.fa.fa-fw.fa-cogs
+          - if (rule.label)
+            span.rules-title #{rule.label}
+            span.small &emsp;( #{rule.name} )
+          - else
+            span.rules-title=rule.name

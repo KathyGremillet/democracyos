@@ -1,0 +1,76 @@
+#forum-wrapper.admin-wrapper
+  .forum-admin
+    .heading
+      h1
+        i.fa.fa-folder
+        =t(form.title)
+    form.form.main-form(action=(config.subPath+form.action), method="post", role="form", novalidate, autovalidate, autosubmit)
+      ul.form-errors
+      .status-wrapper
+        .status.creating
+          .loader-wrapper: .loader
+          p= t('forum.status.creating')
+        .status.destroying
+          .loader-wrapper: .loader
+          p= t('forum.status.destroying')
+        .status.error
+          p= t('forum.status.error')
+        
+      .fieldsets
+        fieldset
+          label= t('forum.form.url.label')
+          .input-group.subdomain
+            div.input-group-addon
+              span.desktop= domain
+              span.mobile /
+            input.form-control.f-name(type='text', name='name', validate='required forum', autofocus, id='hostname', autocorrect='off', autocapitalize='off', value=forum.name, tabindex='1')
+            span.error.name-unavailable.hide=t('forum.form.url.unavailable')
+
+        fieldset
+          label= t('forum.form.title.label')
+          .input-group.solo.title
+            input.form-control.f-title(type='text', name='title', value=forum.title, tabindex='2', placeholder= t('forum.form.title.placeholder'), validate='required')
+
+        fieldset
+          label= t('forum.form.image.label')
+          .input-group.solo.image
+            input.form-control.f-title(type='text', name='image', value=forum.imageUrl, tabindex='3', placeholder= t('forum.form.image.placeholder'), validate='url')
+
+        fieldset
+          label= t('forum.form.summary.label')
+          .input-group.solo.summary
+            - var validateSummary = 'required' ;
+            textarea.form-control.editable.f-summary(name='summary',rows='6', tabindex='4', placeholder= t('forum.form.summary.placeholder'))= forum.summary
+        
+        fieldset.commands
+          button.btn.btn-primary.btn-labeled
+            span.btn-label.pull-left
+              span(class=form.icon)
+            span= t(form.submit)
+          - if (forum.id)
+            //a.btn.btn-danger.btn-labeled.btn-delete(data-toggle="modal",data-target="#deleteModal")
+            button.btn.btn-danger.btn-labeled.btn-delete(data-toggle="modal",data-target="#deleteModal")
+              span.btn-label
+                i.fa.fa-trash
+              span= t('admin-topics-form.delete-topic.button.delete')
+        
+    #deleteModal.modal.fade(tabindex="-1",role="dialog",aria-labelledby="deleteModalLabel")
+      .modal-dialog.admin-forum-delete-modal(role="document")
+        .modal-content
+          .modal-header
+            button.close.cancel(type="button",data-dismiss="modal",aria-label="Close")
+              span(aria-hidden="true") &times;
+            h4.modal-title#deleteModalLabel
+              = t('settings-forums.delete.confirmation.title')
+          .modal-body
+            p.text-danger!=t('settings-forums.delete.confirmation.body')
+            .well
+              p!=t('settings-forums.delete.confirmation.instructions', { domain: forum.name })
+              .form-group
+                input.forum-name.form-control(type='text', name='forum', validate='equals:'+forum.name)
+          .modal-footer
+            button.btn.btn-default(type="button",data-dismiss="modal",aria-label=t('admin-rule.delete-rule.confirmation.cancel'))
+              = t('admin-rule.delete-rule.confirmation.cancel')
+            button.btn.btn-danger.ok.main(type="button",disabled=true,data-dismiss="modal",aria-label=t('settings-forums.delete.confirmation.button-confirm'))
+              = t('settings-forums.delete.confirmation.button-confirm')
+                

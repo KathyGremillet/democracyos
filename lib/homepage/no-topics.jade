@@ -1,0 +1,7 @@
+- if (forum)
+  .forum-intro
+    h2= forum.title
+    - if (forum.summary)
+      .description!= forum.summary
+      
+h4.no-topics.text-center= t('homepage.no-topics')

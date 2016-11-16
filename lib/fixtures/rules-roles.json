@@ -1,0 +1,32 @@
+[
+  {
+    "name" : "boss",
+    "value" : {
+        "label" : {
+            "default" : "boss",
+            "fr" : "一影",
+            "en" : "一影"
+        },
+        "color" : {
+            "background" : "#ff0000",
+            "text" : "#fff"
+        }
+    },
+    "type" : "role"
+  },
+  {
+      "name" : "test",
+      "value" : {
+          "label" : {
+              "default" : "test",
+              "fr" : "test",
+              "en" : "test"
+          },
+          "color" : {
+              "background" : "#9E9E9E",
+              "text" : "#fff"
+          }
+      },
+      "type" : "role"
+  }
+]

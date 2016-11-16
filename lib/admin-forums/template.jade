@@ -1,0 +1,15 @@
+#forum-wrapper.admin-wrapper
+  .forum-admin
+    .actions.well
+      .row
+        .col-xs-12.col-md-3
+          a.btn.btn-success.btn-labeled.btn-block.new(href='#{config.subPath}/admin/forums/create')
+            span.btn-label.pull-left
+              span.fa.fa-plus
+            span=t('admin-topics.list.add-topic')
+    .list.list-group
+      - each forum in forums
+        a.list-group-item.forum-item(href='#{config.subPath}/admin/forums/'+forum.id)
+          h4
+            =forum.title
+            small=forum.summary

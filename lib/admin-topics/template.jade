@@ -1,0 +1,67 @@
+- var prepend = forum ? ('/' + forum.name) : ''
+
+#topics-wrapper.admin-wrapper
+  .topics-admin
+    .actions.well
+      .row
+        .col-md-3.col-xs-12
+          a.btn.btn-success.btn-block.btn-labeled.clearfix.new(href='#{config.subPath}/admin/topics/create')
+            span.btn-label.pull-left
+              span.fa.fa-plus
+            span=t('admin-topics.list.add-topic')
+        .col-md-6.col-xs-12.text-center
+          .input-group.input-group-md
+            span.input-group-addon
+              i.glyphicon.glyphicon-search
+            input.form-control.search(type='text', placeholder='#{t("admin-topics.list.search.placeholder")}', autofocus)
+        .col-md-3.col-xs-12
+          button.btn.btn-primary.btn-block.dropdown-toggle(type='button',data-toggle='dropdown')
+            =t('admin-topics.list.sort')
+          ul.dropdown-menu.dropdown-menu-right
+            li
+              a.sort(data-sort='topic-date')
+                i.fa.fa-calendar
+                =t('admin-topics-form.label.publishedAt')
+            li
+              a.sort(data-sort='topic-title')
+                i.fa.fa-sort-alpha-asc
+                =t('admin-topics-form.label.mediaTitle')
+            - each forum in forums
+              li
+                a.filter.forum(data-filter=forum.title)
+                  i.fa.fa-folder-open
+                  span=forum.title
+        .col-xs-12
+          hr/
+          a.btn.btn-default.btn-sm(href='#{config.subPath}/csv/all-comments', target='_self', title='export-all-comments')
+            span.fa.fa-download
+            &nbsp;
+            span=t('admin-topics.export.all-comments')
+                  
+    .list.list-group
+      - each topic in topics
+        a.list-group-item(href="#{config.subPath}/admin/topics/" + topic.id, data-topicid=topic.id)
+          span.topic-date.hide=topic.createdAt
+          button.btn.btn-default.pull-right.topic-link
+            i.fa.fa-external-link
+          h4.topic-title
+            =topic.mediaTitle
+            small.visible-xs-block.visible-lg-inline=topic.topicId
+          - if (topic.forum)
+            p.info
+              i.fa.fa-folder-open
+              span.topic-forum=topic.forum.title
+          p.info
+            i.fa.fa-tag
+            span.topic-tag=topic.tag.name
+          - if (topic.author)
+            p.info
+              i.fa.fa-user
+              span.topic-tag=topic.author
+            - if (topic.closingAt)
+              - var date = new Date(topic.closingAt)
+              - var relative = moment(date).fromNow()
+              - var when = (date < Date.now()) ? 'past' : 'future'
+              p.info
+                i.fa.fa-calendar-times-o
+                span=t('admin-topics.list.close.' + when) + ' ' + relative

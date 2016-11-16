@@ -1,0 +1,183 @@
+
+boxSize = 6
+color = #333
+color2 = #999
+
+#forum-wrapper .forum-admin
+  .forum-top
+    margin -15px -15px 15px
+    padding 15px 15px 0
+
+  .forum-title
+    margin 0 0 5px
+    font-size 25px
+    line-height 38px
+    font-weight 400
+
+  .forum-desc
+    font-size 14px
+    color #666
+
+  .forum-subtitle
+    display inline-block
+    padding 0 0 3px
+    border-bottom 2px solid black
+    color black
+    font-size 16px
+    font-weight 700
+    line-height 1.5
+    margin 15px 0
+
+  fieldset
+    margin-top 1px
+    margin-bottom 1px
+    padding 10px
+    font-size 14px
+
+    &:last-of-type
+      margin-bottom 30px
+
+  label
+    display inline-block
+    float left
+    margin-bottom 5px
+    margin-top 0
+    padding-top 0
+    padding-bottom 0
+    font-size 14px
+    font-weight bold
+
+  .editable
+    min-height: 150px
+    height: auto
+    &.medium-editor-hidden
+      display: none
+
+  .form-group,
+  .input-group
+    span.error
+      top 15px
+      right 8px
+
+  input[type="text"],
+  .input-group
+    width 100%
+
+  input[type="text"]
+    display block
+    height 42px
+    margin-top 0px
+    margin-bottom 0px
+    padding 8px 12px
+    border 1px solid #dedede
+    border-radius 3px
+    background-color white
+    color black
+
+  .input-group
+    input[type="text"]
+      width 100%
+
+    .input-group-addon
+      border-color #dedede
+      background-color #fafafa
+
+      & + input[type="text"]
+        border-top-left-radius 0
+        border-bottom-left-radius 0
+
+  .form-group
+    margin 0
+
+    &.title
+      @media screen and (max-width: 991px)
+        .error
+          top 40px
+    &.summary
+      span.error
+        display block
+        float right
+        clear both
+        position relative
+        top 0
+        right 0
+        margin 1em 0 0
+
+  .subdomain
+    .input-group-addon
+      .mobile
+        display none
+
+      @media screen and (max-width: 450px)
+        .desktop
+          display none
+
+        .mobile
+          display inline
+
+  .status-wrapper
+    &.status-non-existent
+      display none
+
+    &.status-creating
+      .status.creating
+        display block
+
+    &.status-destroying
+      .status.destroying
+        display block
+
+    &.status-error
+      .status.error
+        display block
+
+    .status
+      display none
+      position absolute
+      left 0
+      top 0
+      width 100%
+      height 100%
+      background-color rgba(#fff, .9)
+
+      &.error
+        color red
+
+      p
+        margin 5px 0 3px
+        font-size 11px
+        color #555
+        text-align center
+
+  .loader-wrapper
+    margin-top 15px
+    text-align center
+
+  .loader
+    display inline-block
+    margin-right 8px
+    margin-left 12px
+    border-radius 100%
+    width boxSize * 1px
+    height boxSize * 1px
+    box-shadow boxSize*1px boxSize*1px color2,
+      boxSize*-1px boxSize*1px color,
+      boxSize*-1px boxSize*-1px color2,
+      boxSize*1px boxSize*-1px color
+    -webkit-animation spin ease infinite 4s
+    animation spin ease infinite 4s
+
+.admin-forum-delete-modal
+  margin-top 100px
+  max-width 90%
+  width 500px
+  -webkit-transform s('translate(0, -50%)')
+  -ms-transform s('translate(0, -50%)')
+  transform s('translate(0, -50%)')
+
+  form
+    margin-bottom 0
+
+  p
+    text-align justify
+    font-size 14px

@@ -1,0 +1,266 @@
+[
+  {
+    "_id": "57125325edb89910007ea600",
+    "email" : "dev@democracyos.eu",
+    "firstName" : "Admin",
+    "lastName" : "De la Moustache",
+    "age" : 5,
+    "roles" : [],
+    "location": "loc1",
+    "notifications" : {
+        "new-comment" : true,
+        "new-topic" : true,
+        "replies" : true
+    },
+    "status" : "active",
+    "emailValidated" : true,
+    "locale" : "fr",
+    "activities" : {
+        "fist": true,
+        "weapon": true
+    },
+    "profilePictureUrl" : "http://web124.free.fr/i/a/avatar-512.png",
+    "salt" : "00b1a907b91c8d497cf8b7b6ce6250bb8f8a2d853016f9a7d100e3262b6502d2",
+    "hash" : "d7353acf02ddf385b6abe4168f11c49aad107263d5dbae7a095f6fa55e2d63ca326c0dbf2631fe19de4fabc782bc7468cb44c431a0ca931273681d0aac2f9e62dcf85abe2a608064ffdb5a237bc0ea15e9d1a67615b10a90b7ec04ab6ff9f69bc398a9b2f2c4b802821af3b7f1463aae1301ea9efc3d98c7eab4226bb684a993885719298fb2cd9bd66496d67eed8a9b51c83e0f4f9119f21a689ed78b5b827e9fc2456e51d407df0094e86769afaee152d27de5e20b71cf18ba7ed747cfa246a3eb087e09ef2fd279de6ffc7afc70942520e8e212a5d6dda034a7efc9fb934b25bcfdbfd708601eb984d6f7147549f265ed43078bfb9462205a0b1497d65a17c360716f56818bf6e08760a5ce65b1a35ab4e7c4e50fc7e44f4dca3516b5cb3e53c401d832f6f0d5ae53a9c1d7036cd687f541b900c89c882f39bc7a71a7a1c016551f6f1ee7cc0a48710ef57353fc41ea2dc36850372b60501f3322ba509fca99981fa163675c0d300928b4ab1af9b47433d837e8ad9c43957252caa1924c6ecd1a644c238b5b5ce4f9393040de8fe48c31429f988d67d105debb22fb58b90ca988c35066b41c738d84e56b37cc4a30f6c3e6ef84ff833205502649569e04129205b92e73909fb99d455e00c8adc9fd5c60b7dcca81f4b8affe1a350895cfdff006c168ffc2d0edc2dbaddd8e9f1f16a8dfed90f26a38799ff63ecb59f1c2fc"
+  },
+  {
+    "_id": "57125325edb89910007ea601",
+    "email" : "dev+saiga@democracyos.eu",
+    "firstName" : "Saiga",
+    "lastName" : "Fūrinji",
+    "age" : 6,
+    "roles" : ["boss"],
+    "location": "loc2",
+    "notifications" : {
+        "new-comment" : false,
+        "new-topic" : false,
+        "replies" : true
+    },
+    "status" : "active",
+    "emailValidated" : true,
+    "locale" : "fr",
+    "activities" : {
+        "fist": true,
+        "weapon": false
+    },
+    "profilePictureUrl" : "http://web124.free.fr/i/a/1s9f/saiga.png",
+    "salt" : "00b1a907b91c8d497cf8b7b6ce6250bb8f8a2d853016f9a7d100e3262b6502d2",
+    "hash" : "d7353acf02ddf385b6abe4168f11c49aad107263d5dbae7a095f6fa55e2d63ca326c0dbf2631fe19de4fabc782bc7468cb44c431a0ca931273681d0aac2f9e62dcf85abe2a608064ffdb5a237bc0ea15e9d1a67615b10a90b7ec04ab6ff9f69bc398a9b2f2c4b802821af3b7f1463aae1301ea9efc3d98c7eab4226bb684a993885719298fb2cd9bd66496d67eed8a9b51c83e0f4f9119f21a689ed78b5b827e9fc2456e51d407df0094e86769afaee152d27de5e20b71cf18ba7ed747cfa246a3eb087e09ef2fd279de6ffc7afc70942520e8e212a5d6dda034a7efc9fb934b25bcfdbfd708601eb984d6f7147549f265ed43078bfb9462205a0b1497d65a17c360716f56818bf6e08760a5ce65b1a35ab4e7c4e50fc7e44f4dca3516b5cb3e53c401d832f6f0d5ae53a9c1d7036cd687f541b900c89c882f39bc7a71a7a1c016551f6f1ee7cc0a48710ef57353fc41ea2dc36850372b60501f3322ba509fca99981fa163675c0d300928b4ab1af9b47433d837e8ad9c43957252caa1924c6ecd1a644c238b5b5ce4f9393040de8fe48c31429f988d67d105debb22fb58b90ca988c35066b41c738d84e56b37cc4a30f6c3e6ef84ff833205502649569e04129205b92e73909fb99d455e00c8adc9fd5c60b7dcca81f4b8affe1a350895cfdff006c168ffc2d0edc2dbaddd8e9f1f16a8dfed90f26a38799ff63ecb59f1c2fc"
+  },
+  {
+    "_id": "57125325edb89910007ea602",
+    "email" : "dev+gaidar@democracyos.eu",
+    "firstName" : "Alexander",
+    "lastName" : "Gaidar",
+    "age" : 6,
+    "roles" : [],
+    "location": "loc3",
+    "notifications" : {
+        "new-comment" : false,
+        "new-topic" : false,
+        "replies" : true
+    },
+    "status" : "active",
+    "emailValidated" : true,
+    "locale" : "fr",
+    "activities" : {
+        "fist": true,
+        "weapon": false
+    },
+    "profilePictureUrl" : "http://web124.free.fr/i/a/1s9f/gaidar.png",
+    "salt" : "00b1a907b91c8d497cf8b7b6ce6250bb8f8a2d853016f9a7d100e3262b6502d2",
+    "hash" : "d7353acf02ddf385b6abe4168f11c49aad107263d5dbae7a095f6fa55e2d63ca326c0dbf2631fe19de4fabc782bc7468cb44c431a0ca931273681d0aac2f9e62dcf85abe2a608064ffdb5a237bc0ea15e9d1a67615b10a90b7ec04ab6ff9f69bc398a9b2f2c4b802821af3b7f1463aae1301ea9efc3d98c7eab4226bb684a993885719298fb2cd9bd66496d67eed8a9b51c83e0f4f9119f21a689ed78b5b827e9fc2456e51d407df0094e86769afaee152d27de5e20b71cf18ba7ed747cfa246a3eb087e09ef2fd279de6ffc7afc70942520e8e212a5d6dda034a7efc9fb934b25bcfdbfd708601eb984d6f7147549f265ed43078bfb9462205a0b1497d65a17c360716f56818bf6e08760a5ce65b1a35ab4e7c4e50fc7e44f4dca3516b5cb3e53c401d832f6f0d5ae53a9c1d7036cd687f541b900c89c882f39bc7a71a7a1c016551f6f1ee7cc0a48710ef57353fc41ea2dc36850372b60501f3322ba509fca99981fa163675c0d300928b4ab1af9b47433d837e8ad9c43957252caa1924c6ecd1a644c238b5b5ce4f9393040de8fe48c31429f988d67d105debb22fb58b90ca988c35066b41c738d84e56b37cc4a30f6c3e6ef84ff833205502649569e04129205b92e73909fb99d455e00c8adc9fd5c60b7dcca81f4b8affe1a350895cfdff006c168ffc2d0edc2dbaddd8e9f1f16a8dfed90f26a38799ff63ecb59f1c2fc"
+  },
+  {
+    "_id": "57125325edb89910007ea603",
+    "email" : "dev+hongo@democracyos.eu",
+    "firstName" : "Akira",
+    "lastName" : "Hongou",
+    "age" : 5,
+    "roles" : [],
+    "location": "loc3",
+    "notifications" : {
+        "new-comment" : false,
+        "new-topic" : false,
+        "replies" : true
+    },
+    "status" : "active",
+    "emailValidated" : true,
+    "locale" : "fr",
+    "activities" : {
+        "fist": true,
+        "weapon": false
+    },
+    "profilePictureUrl" : "http://web124.free.fr/i/a/1s9f/hongo.png",
+    "salt" : "00b1a907b91c8d497cf8b7b6ce6250bb8f8a2d853016f9a7d100e3262b6502d2",
+    "hash" : "d7353acf02ddf385b6abe4168f11c49aad107263d5dbae7a095f6fa55e2d63ca326c0dbf2631fe19de4fabc782bc7468cb44c431a0ca931273681d0aac2f9e62dcf85abe2a608064ffdb5a237bc0ea15e9d1a67615b10a90b7ec04ab6ff9f69bc398a9b2f2c4b802821af3b7f1463aae1301ea9efc3d98c7eab4226bb684a993885719298fb2cd9bd66496d67eed8a9b51c83e0f4f9119f21a689ed78b5b827e9fc2456e51d407df0094e86769afaee152d27de5e20b71cf18ba7ed747cfa246a3eb087e09ef2fd279de6ffc7afc70942520e8e212a5d6dda034a7efc9fb934b25bcfdbfd708601eb984d6f7147549f265ed43078bfb9462205a0b1497d65a17c360716f56818bf6e08760a5ce65b1a35ab4e7c4e50fc7e44f4dca3516b5cb3e53c401d832f6f0d5ae53a9c1d7036cd687f541b900c89c882f39bc7a71a7a1c016551f6f1ee7cc0a48710ef57353fc41ea2dc36850372b60501f3322ba509fca99981fa163675c0d300928b4ab1af9b47433d837e8ad9c43957252caa1924c6ecd1a644c238b5b5ce4f9393040de8fe48c31429f988d67d105debb22fb58b90ca988c35066b41c738d84e56b37cc4a30f6c3e6ef84ff833205502649569e04129205b92e73909fb99d455e00c8adc9fd5c60b7dcca81f4b8affe1a350895cfdff006c168ffc2d0edc2dbaddd8e9f1f16a8dfed90f26a38799ff63ecb59f1c2fc"
+  },
+  {
+    "_id": "57125325edb89910007ea604",
+    "email" : "dev+hongo@democracyos.eu",
+    "firstName" : "Agaard",
+    "lastName" : "Jum Sai",
+    "age" : 4,
+    "roles" : [],
+    "location": "loc3",
+    "notifications" : {
+        "new-comment" : false,
+        "new-topic" : false,
+        "replies" : true
+    },
+    "status" : "active",
+    "emailValidated" : true,
+    "locale" : "fr",
+    "activities" : {
+        "fist": true,
+        "weapon": false
+    },
+    "profilePictureUrl" : "http://web124.free.fr/i/a/1s9f/agaard.png",
+    "salt" : "00b1a907b91c8d497cf8b7b6ce6250bb8f8a2d853016f9a7d100e3262b6502d2",
+    "hash" : "d7353acf02ddf385b6abe4168f11c49aad107263d5dbae7a095f6fa55e2d63ca326c0dbf2631fe19de4fabc782bc7468cb44c431a0ca931273681d0aac2f9e62dcf85abe2a608064ffdb5a237bc0ea15e9d1a67615b10a90b7ec04ab6ff9f69bc398a9b2f2c4b802821af3b7f1463aae1301ea9efc3d98c7eab4226bb684a993885719298fb2cd9bd66496d67eed8a9b51c83e0f4f9119f21a689ed78b5b827e9fc2456e51d407df0094e86769afaee152d27de5e20b71cf18ba7ed747cfa246a3eb087e09ef2fd279de6ffc7afc70942520e8e212a5d6dda034a7efc9fb934b25bcfdbfd708601eb984d6f7147549f265ed43078bfb9462205a0b1497d65a17c360716f56818bf6e08760a5ce65b1a35ab4e7c4e50fc7e44f4dca3516b5cb3e53c401d832f6f0d5ae53a9c1d7036cd687f541b900c89c882f39bc7a71a7a1c016551f6f1ee7cc0a48710ef57353fc41ea2dc36850372b60501f3322ba509fca99981fa163675c0d300928b4ab1af9b47433d837e8ad9c43957252caa1924c6ecd1a644c238b5b5ce4f9393040de8fe48c31429f988d67d105debb22fb58b90ca988c35066b41c738d84e56b37cc4a30f6c3e6ef84ff833205502649569e04129205b92e73909fb99d455e00c8adc9fd5c60b7dcca81f4b8affe1a350895cfdff006c168ffc2d0edc2dbaddd8e9f1f16a8dfed90f26a38799ff63ecb59f1c2fc"
+  },
+  {
+    "_id": "57125325edb89910007ea605",
+    "email" : "dev+brahman@democracyos.eu",
+    "firstName" : "Sehrul",
+    "lastName" : "Brahman",
+    "age" : 9,
+    "roles" : [],
+    "location": "loc3",
+    "notifications" : {
+        "new-comment" : false,
+        "new-topic" : false,
+        "replies" : true
+    },
+    "status" : "active",
+    "emailValidated" : true,
+    "locale" : "fr",
+    "activities" : {
+        "fist": true,
+        "weapon": false
+    },
+    "profilePictureUrl" : "http://web124.free.fr/i/a/1s9f/brahman.png",
+    "salt" : "00b1a907b91c8d497cf8b7b6ce6250bb8f8a2d853016f9a7d100e3262b6502d2",
+    "hash" : "d7353acf02ddf385b6abe4168f11c49aad107263d5dbae7a095f6fa55e2d63ca326c0dbf2631fe19de4fabc782bc7468cb44c431a0ca931273681d0aac2f9e62dcf85abe2a608064ffdb5a237bc0ea15e9d1a67615b10a90b7ec04ab6ff9f69bc398a9b2f2c4b802821af3b7f1463aae1301ea9efc3d98c7eab4226bb684a993885719298fb2cd9bd66496d67eed8a9b51c83e0f4f9119f21a689ed78b5b827e9fc2456e51d407df0094e86769afaee152d27de5e20b71cf18ba7ed747cfa246a3eb087e09ef2fd279de6ffc7afc70942520e8e212a5d6dda034a7efc9fb934b25bcfdbfd708601eb984d6f7147549f265ed43078bfb9462205a0b1497d65a17c360716f56818bf6e08760a5ce65b1a35ab4e7c4e50fc7e44f4dca3516b5cb3e53c401d832f6f0d5ae53a9c1d7036cd687f541b900c89c882f39bc7a71a7a1c016551f6f1ee7cc0a48710ef57353fc41ea2dc36850372b60501f3322ba509fca99981fa163675c0d300928b4ab1af9b47433d837e8ad9c43957252caa1924c6ecd1a644c238b5b5ce4f9393040de8fe48c31429f988d67d105debb22fb58b90ca988c35066b41c738d84e56b37cc4a30f6c3e6ef84ff833205502649569e04129205b92e73909fb99d455e00c8adc9fd5c60b7dcca81f4b8affe1a350895cfdff006c168ffc2d0edc2dbaddd8e9f1f16a8dfed90f26a38799ff63ecb59f1c2fc"
+  },
+  {
+    "_id": "57125325edb89910007ea606",
+    "email" : "dev+diego@democracyos.eu",
+    "firstName" : "Diego",
+    "lastName" : "Carlo",
+    "age" : 5,
+    "roles" : [],
+    "location": "loc3",
+    "notifications" : {
+        "new-comment" : false,
+        "new-topic" : false,
+        "replies" : true
+    },
+    "status" : "active",
+    "emailValidated" : true,
+    "locale" : "fr",
+    "activities" : {
+        "fist": true,
+        "weapon": false
+    },
+    "profilePictureUrl" : "http://web124.free.fr/i/a/1s9f/diego.png",
+    "salt" : "00b1a907b91c8d497cf8b7b6ce6250bb8f8a2d853016f9a7d100e3262b6502d2",
+    "hash" : "d7353acf02ddf385b6abe4168f11c49aad107263d5dbae7a095f6fa55e2d63ca326c0dbf2631fe19de4fabc782bc7468cb44c431a0ca931273681d0aac2f9e62dcf85abe2a608064ffdb5a237bc0ea15e9d1a67615b10a90b7ec04ab6ff9f69bc398a9b2f2c4b802821af3b7f1463aae1301ea9efc3d98c7eab4226bb684a993885719298fb2cd9bd66496d67eed8a9b51c83e0f4f9119f21a689ed78b5b827e9fc2456e51d407df0094e86769afaee152d27de5e20b71cf18ba7ed747cfa246a3eb087e09ef2fd279de6ffc7afc70942520e8e212a5d6dda034a7efc9fb934b25bcfdbfd708601eb984d6f7147549f265ed43078bfb9462205a0b1497d65a17c360716f56818bf6e08760a5ce65b1a35ab4e7c4e50fc7e44f4dca3516b5cb3e53c401d832f6f0d5ae53a9c1d7036cd687f541b900c89c882f39bc7a71a7a1c016551f6f1ee7cc0a48710ef57353fc41ea2dc36850372b60501f3322ba509fca99981fa163675c0d300928b4ab1af9b47433d837e8ad9c43957252caa1924c6ecd1a644c238b5b5ce4f9393040de8fe48c31429f988d67d105debb22fb58b90ca988c35066b41c738d84e56b37cc4a30f6c3e6ef84ff833205502649569e04129205b92e73909fb99d455e00c8adc9fd5c60b7dcca81f4b8affe1a350895cfdff006c168ffc2d0edc2dbaddd8e9f1f16a8dfed90f26a38799ff63ecb59f1c2fc"
+  },
+  {
+    "_id": "57125325edb89910007ea607",
+    "email" : "dev+ogata@democracyos.eu",
+    "firstName" : "Isshinsai",
+    "lastName" : "Ogata",
+    "age" : 5,
+    "roles" : [],
+    "location": "loc3",
+    "notifications" : {
+        "new-comment" : false,
+        "new-topic" : false,
+        "replies" : true
+    },
+    "status" : "active",
+    "emailValidated" : true,
+    "locale" : "fr",
+    "activities" : {
+        "fist": true,
+        "weapon": false
+    },
+    "profilePictureUrl" : "http://web124.free.fr/i/a/1s9f/ogata.png",
+    "salt" : "00b1a907b91c8d497cf8b7b6ce6250bb8f8a2d853016f9a7d100e3262b6502d2",
+    "hash" : "d7353acf02ddf385b6abe4168f11c49aad107263d5dbae7a095f6fa55e2d63ca326c0dbf2631fe19de4fabc782bc7468cb44c431a0ca931273681d0aac2f9e62dcf85abe2a608064ffdb5a237bc0ea15e9d1a67615b10a90b7ec04ab6ff9f69bc398a9b2f2c4b802821af3b7f1463aae1301ea9efc3d98c7eab4226bb684a993885719298fb2cd9bd66496d67eed8a9b51c83e0f4f9119f21a689ed78b5b827e9fc2456e51d407df0094e86769afaee152d27de5e20b71cf18ba7ed747cfa246a3eb087e09ef2fd279de6ffc7afc70942520e8e212a5d6dda034a7efc9fb934b25bcfdbfd708601eb984d6f7147549f265ed43078bfb9462205a0b1497d65a17c360716f56818bf6e08760a5ce65b1a35ab4e7c4e50fc7e44f4dca3516b5cb3e53c401d832f6f0d5ae53a9c1d7036cd687f541b900c89c882f39bc7a71a7a1c016551f6f1ee7cc0a48710ef57353fc41ea2dc36850372b60501f3322ba509fca99981fa163675c0d300928b4ab1af9b47433d837e8ad9c43957252caa1924c6ecd1a644c238b5b5ce4f9393040de8fe48c31429f988d67d105debb22fb58b90ca988c35066b41c738d84e56b37cc4a30f6c3e6ef84ff833205502649569e04129205b92e73909fb99d455e00c8adc9fd5c60b7dcca81f4b8affe1a350895cfdff006c168ffc2d0edc2dbaddd8e9f1f16a8dfed90f26a38799ff63ecb59f1c2fc"
+  },
+  {
+    "_id": "57125325edb89910007ea608",
+    "email" : "dev+kushinada@democracyos.eu",
+    "firstName" : "Mikumo",
+    "lastName" : "Kushinada",
+    "age" : 9,
+    "roles" : [],
+    "location": "loc3",
+    "notifications" : {
+        "new-comment" : false,
+        "new-topic" : false,
+        "replies" : true
+    },
+    "status" : "active",
+    "emailValidated" : true,
+    "locale" : "fr",
+    "activities" : {
+        "fist": true,
+        "weapon": false
+    },
+    "profilePictureUrl" : "http://web124.free.fr/i/a/1s9f/kushinada.png",
+    "salt" : "00b1a907b91c8d497cf8b7b6ce6250bb8f8a2d853016f9a7d100e3262b6502d2",
+    "hash" : "d7353acf02ddf385b6abe4168f11c49aad107263d5dbae7a095f6fa55e2d63ca326c0dbf2631fe19de4fabc782bc7468cb44c431a0ca931273681d0aac2f9e62dcf85abe2a608064ffdb5a237bc0ea15e9d1a67615b10a90b7ec04ab6ff9f69bc398a9b2f2c4b802821af3b7f1463aae1301ea9efc3d98c7eab4226bb684a993885719298fb2cd9bd66496d67eed8a9b51c83e0f4f9119f21a689ed78b5b827e9fc2456e51d407df0094e86769afaee152d27de5e20b71cf18ba7ed747cfa246a3eb087e09ef2fd279de6ffc7afc70942520e8e212a5d6dda034a7efc9fb934b25bcfdbfd708601eb984d6f7147549f265ed43078bfb9462205a0b1497d65a17c360716f56818bf6e08760a5ce65b1a35ab4e7c4e50fc7e44f4dca3516b5cb3e53c401d832f6f0d5ae53a9c1d7036cd687f541b900c89c882f39bc7a71a7a1c016551f6f1ee7cc0a48710ef57353fc41ea2dc36850372b60501f3322ba509fca99981fa163675c0d300928b4ab1af9b47433d837e8ad9c43957252caa1924c6ecd1a644c238b5b5ce4f9393040de8fe48c31429f988d67d105debb22fb58b90ca988c35066b41c738d84e56b37cc4a30f6c3e6ef84ff833205502649569e04129205b92e73909fb99d455e00c8adc9fd5c60b7dcca81f4b8affe1a350895cfdff006c168ffc2d0edc2dbaddd8e9f1f16a8dfed90f26a38799ff63ecb59f1c2fc"
+  },
+  {
+    "_id": "57125325edb89910007ea609",
+    "email" : "dev+jenazad@democracyos.eu",
+    "firstName" : "Silcardo",
+    "lastName" : "Jenazad",
+    "age" : 9,
+    "roles" : [],
+    "location": "loc3",
+    "notifications" : {
+        "new-comment" : false,
+        "new-topic" : false,
+        "replies" : true
+    },
+    "status" : "active",
+    "emailValidated" : true,
+    "locale" : "fr",
+    "activities" : {
+        "fist": true,
+        "weapon": false
+    },
+    "profilePictureUrl" : "http://web124.free.fr/i/a/1s9f/jenazad.png",
+    "salt" : "00b1a907b91c8d497cf8b7b6ce6250bb8f8a2d853016f9a7d100e3262b6502d2",
+    "hash" : "d7353acf02ddf385b6abe4168f11c49aad107263d5dbae7a095f6fa55e2d63ca326c0dbf2631fe19de4fabc782bc7468cb44c431a0ca931273681d0aac2f9e62dcf85abe2a608064ffdb5a237bc0ea15e9d1a67615b10a90b7ec04ab6ff9f69bc398a9b2f2c4b802821af3b7f1463aae1301ea9efc3d98c7eab4226bb684a993885719298fb2cd9bd66496d67eed8a9b51c83e0f4f9119f21a689ed78b5b827e9fc2456e51d407df0094e86769afaee152d27de5e20b71cf18ba7ed747cfa246a3eb087e09ef2fd279de6ffc7afc70942520e8e212a5d6dda034a7efc9fb934b25bcfdbfd708601eb984d6f7147549f265ed43078bfb9462205a0b1497d65a17c360716f56818bf6e08760a5ce65b1a35ab4e7c4e50fc7e44f4dca3516b5cb3e53c401d832f6f0d5ae53a9c1d7036cd687f541b900c89c882f39bc7a71a7a1c016551f6f1ee7cc0a48710ef57353fc41ea2dc36850372b60501f3322ba509fca99981fa163675c0d300928b4ab1af9b47433d837e8ad9c43957252caa1924c6ecd1a644c238b5b5ce4f9393040de8fe48c31429f988d67d105debb22fb58b90ca988c35066b41c738d84e56b37cc4a30f6c3e6ef84ff833205502649569e04129205b92e73909fb99d455e00c8adc9fd5c60b7dcca81f4b8affe1a350895cfdff006c168ffc2d0edc2dbaddd8e9f1f16a8dfed90f26a38799ff63ecb59f1c2fc"
+  },
+  {
+    "_id": "57125325edb89910007ea610",
+    "email" : "dev+sougetsu@democracyos.eu",
+    "firstName" : "Sōgetsu",
+    "lastName" : "Ma",
+    "age" : 7,
+    "roles" : [],
+    "location": "loc3",
+    "notifications" : {
+        "new-comment" : false,
+        "new-topic" : false,
+        "replies" : true
+    },
+    "status" : "active",
+    "emailValidated" : true,
+    "locale" : "fr",
+    "activities" : {
+        "fist": true,
+        "weapon": false
+    },
+    "profilePictureUrl" : "http://web124.free.fr/i/a/1s9f/sougetsu.png",
+    "salt" : "00b1a907b91c8d497cf8b7b6ce6250bb8f8a2d853016f9a7d100e3262b6502d2",
+    "hash" : "d7353acf02ddf385b6abe4168f11c49aad107263d5dbae7a095f6fa55e2d63ca326c0dbf2631fe19de4fabc782bc7468cb44c431a0ca931273681d0aac2f9e62dcf85abe2a608064ffdb5a237bc0ea15e9d1a67615b10a90b7ec04ab6ff9f69bc398a9b2f2c4b802821af3b7f1463aae1301ea9efc3d98c7eab4226bb684a993885719298fb2cd9bd66496d67eed8a9b51c83e0f4f9119f21a689ed78b5b827e9fc2456e51d407df0094e86769afaee152d27de5e20b71cf18ba7ed747cfa246a3eb087e09ef2fd279de6ffc7afc70942520e8e212a5d6dda034a7efc9fb934b25bcfdbfd708601eb984d6f7147549f265ed43078bfb9462205a0b1497d65a17c360716f56818bf6e08760a5ce65b1a35ab4e7c4e50fc7e44f4dca3516b5cb3e53c401d832f6f0d5ae53a9c1d7036cd687f541b900c89c882f39bc7a71a7a1c016551f6f1ee7cc0a48710ef57353fc41ea2dc36850372b60501f3322ba509fca99981fa163675c0d300928b4ab1af9b47433d837e8ad9c43957252caa1924c6ecd1a644c238b5b5ce4f9393040de8fe48c31429f988d67d105debb22fb58b90ca988c35066b41c738d84e56b37cc4a30f6c3e6ef84ff833205502649569e04129205b92e73909fb99d455e00c8adc9fd5c60b7dcca81f4b8affe1a350895cfdff006c168ffc2d0edc2dbaddd8e9f1f16a8dfed90f26a38799ff63ecb59f1c2fc"
+  }
+]

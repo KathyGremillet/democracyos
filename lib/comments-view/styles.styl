@@ -1,0 +1,174 @@
+/* Vars
+-------------------------------------------------- */
+content_width = 780px
+tab_color = #909fa0
+/* Comments
+-------------------------------------------------- */
+
+@import 'node_modules/medium-editor/dist/css/medium-editor.css';
+@import 'node_modules/medium-editor/dist/css/themes/beagle.css';
+
+.comments
+  background #f9f9f9
+  padding-top 50px
+  padding-bottom 50px
+
+  .lock-spinner
+      background-color #f9f9f9
+
+  .no-comments
+    text-align center
+    padding 35px 0
+
+  .inner-container
+    position relative
+    margin auto
+    max-width content_width
+    min-height 5em
+
+    .comments-icon
+      position absolute
+      left -50px
+      font-size 36px
+      @media screen and (max-width: 1170px)
+        position relative
+        float left
+        left 0
+        margin 0 20px
+
+    .form-toolbar
+      margin-top 12px
+      height 20px
+
+    .media-list
+      margin-top 10px
+
+    .filter-container
+      padding-left 25px
+      margin 46px auto
+      label
+        display inline-block
+        font-size 13px
+        font-weight bold
+        margin-right 10px
+        color #3d699e
+
+      .sort-container
+        min-height 10px
+
+      .new-comment
+        font-weight normal
+        padding 17px 32px
+        font-size 16px
+        margin-top 10px
+
+      .comments-own
+        margin-top 15px
+        label
+          position relative
+          top -5px
+        .ui-switch
+          display: inline-block;
+          width: 50px;
+          height: 31px;
+          position: relative
+
+          input[type=checkbox]
+              position: absolute;
+              top: 0;
+              left: 0;
+              width: 100%;
+              height: 100%;
+              z-index: 100;
+              opacity: 0;
+              outline: 0;
+              margin: 0
+
+          input[type=checkbox]:checked+.status
+            background: #3d699e
+
+          .status
+            top: 8px;
+            left: 0;
+            width: 68%;
+            height: 14px;
+            border-radius: 27px;
+            background: #d0d2d3;
+            cursor: pointer;
+            position: relative;
+            display: inline-block
+
+          input[type=checkbox]:checked+.status::before
+            -webkit-transform: translate(70%,-5%);
+            transform: translate(70%,-5%)
+
+          .status::before
+            content: "";
+            display: block;
+            position: absolute;
+            top: -2px;
+            left: 0;
+            height: 20px;
+            width: 20px;
+            background: #fff;
+            box-shadow: 0 0 1px 0 rgba(0,0,0,.25),0 4px 11px 0 rgba(0,0,0,.08),-1px 3px 3px 0 rgba(0,0,0,.14);
+            transition: transform .1s ease 0s,-webkit-transform .1s ease 0s;
+            border-radius: 50%;
+            -webkit-transform: translate(-5%,-5%);
+            transform: translate(-5%,-5%)
+
+    ul.comments-nav
+      display none
+
+    .editable.comment-text
+      padding: 16px 21px
+
+    form.comment-form
+
+      .form-toolbar
+        margin-left 10px
+        margin-bottom 5px
+        font-size 12px
+        font-weight bold
+        .fa
+          margin 0 6px
+
+      .editable
+        min-height: 200px
+        height: auto
+
+      textarea
+        width 100%
+        padding 2%
+      .form-submit
+        background-color #484848
+        color white
+        &:hover
+          background-color #2d2d2d
+      .form-messages
+        color red
+        display block
+      span.error
+        top 6px
+        color red
+        display block
+
+      .form-inline
+        .form-group
+          label
+            margin: 5px 10px
+            font-size 12px
+            font-weight bold
+            display inline-block
+
+    .btn-block
+      margin-bottom: 15px
+      span
+        text-align left
+        display inline-block
+
+    .signup-info
+      margin 20px 10px
+      font-size 14px
+
+@import './comments'
